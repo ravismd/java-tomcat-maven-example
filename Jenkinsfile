@@ -12,7 +12,7 @@ node{
         
       }  
       stage('Deploy') {     
-            sshagent(['ansible']) {
+           {
                sh 'scp -o StrictHostKeyChecking=no target/tomcatdeploymnetdemo.war ansadmin@13.235.67.228:/opt/'
               
           }
