@@ -8,7 +8,9 @@ node{
          //// Get maven home path and build
         sh "mvn clean package -Dmaven.test.skip=true"
       }
-   
+     stage ('Test-JUnit'){
+         sh "mvn test"
+      } 
     
       stage('Deploy') {     
             sshagent(['Tomcat-jenkins']) {
